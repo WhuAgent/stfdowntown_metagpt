@@ -91,6 +91,6 @@ def main(
 
 
 if __name__ == "__main__":
-    main("123",
+    main("Host a open lunch party at 13:00 pm",
          "base_the_ville_isabella_maria_klaus",
-         "stf_game_test")
+         "test_sim_yefei")
