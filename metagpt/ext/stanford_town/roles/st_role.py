@@ -221,6 +221,8 @@ class STRole(Role):
         take the <att_bandwidth> of the closest events. Finally, we check whether
         any of them are new, as determined by <retention>. If they are new, then we
         save those and return the <BasicMemory> instances for those events.
+        我们首先感知角色附近的事件，这些事件由其<vision_r> 决定。如果该半径范围内发生了很多事件，我们会取最近事件的 <att_bandwidth>。
+        最后，我们检查其中是否有新的事件，这些事件由 <retention> 决定。如果是新的，我们会保存这些事件并返回这些事件的 <BasicMemory> 实例。
 
         OUTPUT:
             ret_events: a list of <BasicMemory> that are perceived and new.
@@ -364,6 +366,7 @@ class STRole(Role):
                         chat_node_ids,
                     )
                 ]
+                #重要性分数，当值为-1时，触发反思行为
                 self.rc.scratch.importance_trigger_curr -= event_poignancy
                 self.rc.scratch.importance_ele_n += 1
 

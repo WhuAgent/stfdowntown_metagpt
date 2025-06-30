@@ -50,6 +50,7 @@ dependencies = [
     "pygithub~=2.3",
     "pylint~=3.0.3",
     "python-docx==0.8.11",
+    "python-fire>=0.1.0",
     "pyyaml==6.0.1",
     "qdrant-client==1.7.0",
     "qianfan~=0.4.4",

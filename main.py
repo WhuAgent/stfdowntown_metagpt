@@ -7,7 +7,6 @@ import asyncio
 from typing import Optional
 
 import fire
-
 from metagpt.ext.stanford_town.roles.st_role import STRole
 from metagpt.ext.stanford_town.stanford_town import StanfordTown
 from metagpt.ext.stanford_town.utils.const import STORAGE_PATH
@@ -21,7 +20,8 @@ from metagpt.logs import logger
 
 
 async def startup(
-    idea: str, fork_sim_code: str, sim_code: str, temp_storage_path: str, investment: float = 30.0, n_round: int = 500
+        idea: str, fork_sim_code: str, sim_code: str, temp_storage_path: str, investment: float = 30.0,
+        n_round: int = 500
 ):
     town = StanfordTown()
     logger.info("StanfordTown init environment")
@@ -61,12 +61,12 @@ async def startup(
 
 
 def main(
-    idea: str,
-    fork_sim_code: str,
-    sim_code: str,
-    temp_storage_path: Optional[str] = None,
-    investment: float = 30.0,
-    n_round: int = 500,
+        idea: str,
+        fork_sim_code: str,
+        sim_code: str,
+        temp_storage_path: Optional[str] = None,
+        investment: float = 30.0,
+        n_round: int = 500,
 ):
     """
     Args:
