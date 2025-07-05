@@ -1,8 +1,25 @@
 # Full Example: https://github.com/geekan/MetaGPT/blob/main/config/config2.example.yaml
 # Reflected Code: https://github.com/geekan/MetaGPT/blob/main/metagpt/config2.py
-# Config Docs: https://docs.deepwisdom.ai/main/en/guide/get_started/configuration.html
+# Config Docs: https://docs.deepwisdom.ai/main/en/guide/get_started/configuration.
 llm:
   api_type: "openai"  # or azure / ollama / groq etc.
-  model: "gpt-4-turbo"  # or gpt-3.5-turbo
-  base_url: "https://api.openai.com/v1"  # or forward url / other llm url
-  api_key: "YOUR_API_KEY"
+  model: "gpt-3.5-turbo"
+  base_url: "https://poloai.top/v1"  # or forward url / other llm url
+  api_key: "sk-NyiTFkWTnHGuF25INh29qiWM3KPONCoRV08o4Sht0kcCedUN"
+
+embedding:
+  api_type: "openai"  # or azure / ollama / groq etc.
+  model: "embedding-3"
+  base_url: "https://open.bigmodel.cn/api/paas/v4"  # or forward url / other embedding url
+  api_key: "ebbb2a0e7c4844b1b688ff850bdd22c4.eTSqTDcm9zgvoIxU"
+
+deepseek:
+  api_type: "openai"
+  api_key: sk-ca3583e3026949299186dcbf3fc34f8c
+  base_url: https://api.deepseek.com
+  model: deepseek-chat
+# llm:
+#   api_type: "openai"  # or azure / ollama / groq etc.
+#   model: "qwen-plus-latest"
+#   base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"  # or forward url / other llm url
+#   api_key: "sk-55dde6f887e04a0882e6f7650fd52917"
