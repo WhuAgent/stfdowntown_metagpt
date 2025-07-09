@@ -92,5 +92,5 @@ def main(
 
 if __name__ == "__main__":
     main("Host a open lunch party at 13:00 pm",
-         "base_the_ville_isabella_maria_klaus",
+         "July1_the_ville_isabella_maria_klaus-step-3-8",
          "test_sim_yefei")
