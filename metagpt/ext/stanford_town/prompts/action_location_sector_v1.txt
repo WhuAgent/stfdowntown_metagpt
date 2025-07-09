@@ -1,14 +1,16 @@
-Variables: 
+Variables:
 !<INPUT 0>! -- Persona name
-!<INPUT 1>! -- Maze all possible sectors
-!<INPUT 2>! -- Persona name
-!<INPUT 3>! -- Persona living sector
-!<INPUT 4>! -- Persona living sector arenas
-!<INPUT 5>! -- Persona name
-!<INPUT 6>! -- Persona current sector
-!<INPUT 7>! -- Persona current sector arenas
-!<INPUT 8>! -- curr action description
-!<INPUT 9>! -- Persona name
+!<INPUT 1>! -- Persona living sector (从 living_area 提取)
+!<INPUT 2>! -- Living sector arenas (居住区子区域)
+!<INPUT 3>! -- Persona name (重复二)
+!<INPUT 4>! -- Persona current sector
+!<INPUT 5>! -- Current sector arenas (当前区子区域)
+!<INPUT 6>! -- Daily plan requirement (带换行符或空)
+!<INPUT 7>! -- Accessible sectors (过滤后的可访问区域)
+!<INPUT 8>! -- Persona name (重复三)
+!<INPUT 9>! -- Action description part 1 (括号前内容)
+!<INPUT 10>! -- Action description part 2 (括号内内容)
+!<INPUT 11>! -- Persona name (重复四)
 <commentblockmarker>###</commentblockmarker>
 Task -- choose an appropriate area  from the area options for a task at hand. 
 

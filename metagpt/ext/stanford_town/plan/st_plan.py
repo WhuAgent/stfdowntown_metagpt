@@ -589,7 +589,9 @@ async def _determine_action(role: "STRole"):
     # chunk actions.
     # Importantly, we try to decompose at least two hours worth of schedule at
     # any given point.
+    # 返回当前要分解的事件index
     curr_index = role.scratch.get_f_daily_schedule_index()
+    # 返回60分钟以后的事件index
     curr_index_60 = role.scratch.get_f_daily_schedule_index(advance=60)
 
     logger.info(f"f_daily_schedule: {role.scratch.f_daily_schedule}")
@@ -606,6 +608,7 @@ async def _determine_action(role: "STRole"):
                 role.scratch.f_daily_schedule[curr_index : curr_index + 1] = await TaskDecomp().run(
                     role, act_desp, act_dura
                 )
+        # 如果当前事件不是最终事件
         if curr_index_60 + 1 < len(role.scratch.f_daily_schedule):
             act_desp, act_dura = role.scratch.f_daily_schedule[curr_index_60 + 1]
             if act_dura >= 60:
@@ -650,7 +653,7 @@ async def _determine_action(role: "STRole"):
 
     act_desp, act_dura = role.scratch.f_daily_schedule[curr_index]
 
-    new_action_details = await GenActionDetails().run(role, act_desp, act_dura)
+    new_action_details = GenActionDetails().run(role, act_desp, act_dura)
     # Adding the action to role's queue.
     role.scratch.add_new_action(**new_action_details)
 

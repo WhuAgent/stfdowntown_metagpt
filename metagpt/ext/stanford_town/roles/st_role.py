@@ -71,6 +71,7 @@ class STRole(Role):
 
     sim_code: str = Field(default="new_sim")
     step: int = Field(default=0)
+    step: int = Field(default=0)
     start_time: Optional[datetime] = Field(default=None)
     curr_time: Optional[datetime] = Field(default=None)
     sec_per_step: int = Field(default=10)

@@ -1,0 +1,11 @@
+name: New model
+version: 0.0.1
+schema: v1
+models:
+  - provider: DeepSeek
+    model: claude-3-7-sonnet-latest
+    apiKey: sk-01708b6c91b044689d48eaef73a2e47f
+    name: deepseek-chat
+    roles:
+      - chat
+      - edit

@@ -1,13 +1,13 @@
 Variables: 
 !<INPUT 0>! -- Persona name
-!<INPUT 1>! -- Persona's current arena
-!<INPUT 2>! -- Persona's current sector
+!<INPUT 1>! -- Target sector
+!<INPUT 2>! -- Target sector's all arenas
 !<INPUT 3>! -- Persona name
-!<INPUT 4>! -- target sector
-!<INPUT 5>! -- Persona's sector's all arenas (minus no access)
-!<INPUT 6>! -- Curr action seq
-!<INPUT 7>! -- Persona name
-!<INPUT 8>! -- Persona's current sector
+!<INPUT 4>! -- Action description1
+!<INPUT 5>! -- Action description2
+!<INPUT 6>! -- Persona name
+!<INPUT 7>! -- Target sector
+!<INPUT 8>! -- Target sector's all arenas
 
 <commentblockmarker>###</commentblockmarker>
 Jane Anderson is in kitchen in Jane Anderson's house.

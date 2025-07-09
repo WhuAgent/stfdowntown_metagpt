@@ -7,11 +7,7 @@ import pytest
 from metagpt.environment import StanfordTownEnv
 from metagpt.environment.api.env_api import EnvAPIAbstract
 from metagpt.ext.stanford_town.actions.gen_action_details import (
-    GenActionArena,
     GenActionDetails,
-    GenActionObject,
-    GenActionSector,
-    GenActObjDescription,
 )
 from metagpt.ext.stanford_town.roles.st_role import STRole
 from metagpt.ext.stanford_town.utils.const import MAZE_ASSET_PATH
@@ -37,14 +33,14 @@ async def test_gen_action_details():
     act_world = access_tile["world"]
     assert act_world == "the Ville"
 
-    sector = await GenActionSector().run(role, access_tile, act_desp)
-    arena = await GenActionArena().run(role, act_desp, act_world, sector)
+    sector = GenActionDetails().generate_sector_safe(role, access_tile, act_desp)
+    arena = GenActionDetails().generate_arena_safe(role, access_tile, act_desp, sector)
     temp_address = f"{act_world}:{sector}:{arena}"
-    obj = await GenActionObject().run(role, act_desp, temp_address)
+    obj = GenActionDetails().generate_object_safe(role, act_desp, temp_address)
 
-    act_obj_desp = await GenActObjDescription().run(role, obj, act_desp)
+    act_obj_desp = GenActionDetails().generate_obj_desp_safe(role, obj, act_desp)
 
-    result_dict = await GenActionDetails().run(role, act_desp, act_dura)
+    result_dict = GenActionDetails().run(role, act_desp, act_dura)
 
     # gen_action_sector
     assert isinstance(sector, str)

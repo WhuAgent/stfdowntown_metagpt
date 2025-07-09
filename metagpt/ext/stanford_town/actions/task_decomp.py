@@ -161,6 +161,7 @@ class TaskDecomp(STAction):
         for fi_task, fi_duration in fin_output:
             ftime_sum += fi_duration
 
+        # 手动补上剩余时间
         fin_output[-1][1] += truncated_act_dur - ftime_sum
         output = fin_output
 

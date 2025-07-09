@@ -23,10 +23,11 @@ from metagpt.logs import logger
 async def startup(
     idea: str, fork_sim_code: str, sim_code: str, temp_storage_path: str, investment: float = 30.0, n_round: int = 500
 ):
-    town = StanfordTown()
+    town = StanfordTown()  # 继承自metagpt的team
     logger.info("StanfordTown init environment")
 
     # copy `storage/{fork_sim_code}` to `storage/{sim_code}`
+    # 存放在examples.stanford_town.stf_game_test
     copy_folder(str(STORAGE_PATH.joinpath(fork_sim_code)), str(STORAGE_PATH.joinpath(sim_code)))
 
     # get role names from `storage/{simulation_name}/reverie/meta.json` and then init roles
@@ -35,7 +36,7 @@ async def startup(
     sim_path = STORAGE_PATH.joinpath(sim_code)
     sim_path.mkdir(exist_ok=True)
     for idx, role_name in enumerate(reverie_meta["persona_names"]):
-        has_inner_voice = True if idx == 0 else False
+        has_inner_voice = True if idx == 0 else False  # 给idx为0的人物inner_voice
         role = STRole(
             name=role_name,
             profile=role_name,
@@ -52,7 +53,7 @@ async def startup(
     write_curr_sim_code({"sim_code": sim_code}, temp_storage_path)
     write_curr_step({"step": reverie_meta.get("step", 0)}, temp_storage_path)
 
-    await town.hire(roles)
+    await town.hire(roles)  # 初始化智能体，hire为metagpt的函数
 
     town.invest(investment)
     town.run_project(idea)
@@ -91,6 +92,7 @@ def main(
 
 
 if __name__ == "__main__":
-    main("123",
-         "base_the_ville_isabella_maria_klaus",
-         "stf_game_test")
+    main("hold a party",
+         "July1_the_ville_isabella_maria_klaus-step-3-8",
+         "stf_game_test",
+         temp_storage_path = "C:\\Users\\86173\\Desktop\\Agent-network\\Code\\generative_agents\\environment\\frontend_server\\storage")

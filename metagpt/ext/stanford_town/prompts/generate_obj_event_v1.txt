@@ -11,6 +11,10 @@ Variables:
 Task: We want to understand the state of an object that is being used by someone. 
 
 Let's think step by step. 
-We want to know about !<INPUT 0>!'s state. 
+We want to know about !<INPUT 0>!'s state.
+For example:
+bed is being slept in.
+table is being used.
+refrigerator is open.
 Step 1. !<INPUT 1>! is at/using the !<INPUT 2>!.
 Step 2. Describe the !<INPUT 3>!'s state: !<INPUT 4>! is

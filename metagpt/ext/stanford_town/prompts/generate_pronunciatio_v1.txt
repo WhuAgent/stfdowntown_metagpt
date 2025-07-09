@@ -5,6 +5,7 @@ Variables:
 
 <commentblockmarker>###</commentblockmarker>
 Convert an action description to an emoji (important: use two or less emojis).
-
+example_output:🛁🧖‍
+The value for the output must ONLY contain the emojis.
 Action description: !<INPUT 0>!
 Emoji:

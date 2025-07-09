@@ -1,0 +1,22 @@
+{
+    "action_address": "the Ville:Dorm for Oak Hill College:Klaus Mueller's room:bed",
+    "action_duration": 120,
+    "action_description": "sleeping",
+    "action_pronunciatio": "\ud83d\udca4",
+    "action_event": [
+        "Klaus Mueller",
+        "sleep",
+        "bed"
+    ],
+    "chatting_with": null,
+    "chat": null,
+    "chatting_with_buffer": null,
+    "chatting_end_time": null,
+    "act_obj_description": "being slept in",
+    "act_obj_pronunciatio": "\ud83d\ude34",
+    "act_obj_event": [
+        "bed",
+        "is",
+        "idle"
+    ]
+}

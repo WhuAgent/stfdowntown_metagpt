@@ -129,6 +129,7 @@ class Scratch(BaseModel):
         today_min_elapsed += self.curr_time.minute
         today_min_elapsed += advance
 
+        # 无用代码？
         x = 0
         for task, duration in self.f_daily_schedule:
             x += duration
