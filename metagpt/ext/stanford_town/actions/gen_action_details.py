@@ -27,15 +27,15 @@ class GenActionDetails():
     model = data['llm']['model']
     base_url = data['llm']['base_url']
 
+    # 如果安全返回不存在该区域内，则随机
     safe_sector = "kitchen"
     safe_arena = "kitchen"
     safe_object = "bed"
+
     safe_pronunciatio = "🙂"
-    safe_triple = "idle"  # 应该为name is idle，函数中补充
+    safe_triple = "idle"  # 应该为name is idle，安全返回中补充
     safe_obj_desp = "idle"  # 同上
     safe_obj_triple = "idle"
-
-    name: str = "GenActionDetails"
 
     prompt_dir: Path = PROMPTS_DIR
 
@@ -214,6 +214,7 @@ class GenActionDetails():
         output = self.text_completion(prompt, max_tokens=15, clean_up=__func_clean_up, validate=__func_validate, safe_rsp=self.safe_object)
         x = [i.strip() for i in role.s_mem.get_str_accessible_arena_game_objects(act_address).split(",")]
         if output not in x:
+            # 随机选择物品
             output = random.choice(x)
         return output
     def generate_pronunciatio_safe(self, role: "STRole", act_desp: str):
@@ -362,7 +363,7 @@ class GenActionDetails():
         }
         logger.info(f"Role: {role.name} Action: GenActionDetails output: {result_dict}")
         # 将结果写入文件查看
-        with open('data_pretty.json', 'w') as f:
-            json.dump(result_dict, f, indent=4)
+        # with open('data_pretty.json', 'w') as f:
+        #     json.dump(result_dict, f, indent=4)
 
         return result_dict
