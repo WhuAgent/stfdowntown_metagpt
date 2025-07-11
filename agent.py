@@ -39,11 +39,8 @@ class Environment(BaseAgent):
     
     
 class Persona(BaseAgent):
-
-
     def __init__(self, network, config, logger):
         super().__init__(network, config, logger)
-        gen_action_details = GenActionDetails()
         
     def retreive(self):
         pass
@@ -62,6 +59,21 @@ class Persona(BaseAgent):
         spatial_memory = MemoryTree()
         associative_memory = AgentMemory()
         scratch_memory = Scratch()
+
+
+        # 接下来的部分应该放在plan函数里面
+        # ===================================================>
+        # gen_action_details根据一句计划描述生成相应的具体动作信息
+        # plan的前置阶段会分解小时计划，生成动作描述与持续时间
+        act_desp = "sleeping"
+        act_dura = "120"
+        # 还需要observe的函数实现
+        access_tile = None
+        # access_tile = role.rc.env.observe(
+        #     obs_params=EnvObsParams(obs_type=EnvObsType.GET_TITLE, coord=role.scratch.curr_tile)
+        # )
+        GenActionDetails().run(scratch_memory, spatial_memory, act_desp, act_dura, access_tile)
+        # <======================================================
         
         # 需要的记忆从上面三个变量里面去取，需要环境返回的从 kwargs 中取。
         self.retreive()
