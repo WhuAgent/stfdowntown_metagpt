@@ -2,6 +2,8 @@ from agent_network.base import BaseAgent
 
 from memory import MemoryTree, AgentMemory, Scratch
 
+from gen_action_details import GenActionDetails
+
 class Environment(BaseAgent):
     def __init__(self, network, config, logger):
         super().__init__(network, config, logger)
@@ -37,8 +39,11 @@ class Environment(BaseAgent):
     
     
 class Persona(BaseAgent):
+
+
     def __init__(self, network, config, logger):
         super().__init__(network, config, logger)
+        gen_action_details = GenActionDetails()
         
     def retreive(self):
         pass
